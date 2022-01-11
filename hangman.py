@@ -19,11 +19,15 @@ def game():
         guess = input("Please guess a letter: ")
         for letter in word:
             if guess.lower() in word:
-                pass
+                for i in range(len(word)):
+                    if guess.lower() == word[i]:
+                        print(guess.lower())
+                    else:
+                        print("_")
             else:
                 print("Incorrect Guess")
                 wrongGuesses += 1
-                print("You have", )
+                print("You have", 5 - wrongGuesses, "remaining.")
 
 #main
 game()
