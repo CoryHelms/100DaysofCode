@@ -17,17 +17,17 @@ def game():
     #starting while loop for guessing:
     while wrongGuesses < 5:
         guess = input("Please guess a letter: ")
-        for letter in word:
-            if guess.lower() in word:
-                for i in range(len(word)):
-                    if guess.lower() == word[i]:
-                        print(guess.lower())
-                    else:
-                        print("_")
-            else:
-                print("Incorrect Guess")
-                wrongGuesses += 1
-                print("You have", 5 - wrongGuesses, "remaining.")
+        if guess.lower() in word:
+            print("Correct Guess")
+            for letter in word:
+                if guess.lower() == letter:
+                    print(guess.lower())
+                else:
+                    print("_")
+        else:
+            print("Incorrect Guess")
+            wrongGuesses += 1
+            print("You have", 5 - wrongGuesses, "remaining.")
 
 #main
 game()
